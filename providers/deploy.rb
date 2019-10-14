@@ -243,7 +243,7 @@ def extract_artifact!
       else
         package "unzip"
         execute "extract_artifact!" do
-          command "unzip -q -u -o #{cached_tar_path} -d #{release_path}"
+          command "unzip -o #{cached_tar_path} -d #{release_path}"
           user    new_resource.owner
           group   new_resource.group
           retries 2
